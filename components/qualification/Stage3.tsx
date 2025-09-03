@@ -19,15 +19,18 @@ export default function Stage3() {
   );
   const [draggedItem, setDraggedItem] = useState<string | null>(null);
 
-  const handleDragStart = (e: React.DragEvent, item: string) => {
+  const handleDragStart = (e: any, item: string) => {
     setDraggedItem(item);
+    if (e.dataTransfer) {
+      e.dataTransfer.effectAllowed = 'move';
+    }
   };
 
-  const handleDragOver = (e: React.DragEvent) => {
+  const handleDragOver = (e: any) => {
     e.preventDefault();
   };
 
-  const handleDrop = (e: React.DragEvent, targetItem: string) => {
+  const handleDrop = (e: any, targetItem: string) => {
     e.preventDefault();
     if (!draggedItem || draggedItem === targetItem) return;
 

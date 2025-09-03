@@ -116,8 +116,14 @@ export interface FormData {
   investmentMindset?: string[];
   communityImpact?: string;
   previousExperience?: string;
+  switchReason?: string; // added 
   workingHours?: WorkingHours;
   teamSizeNeeded?: string;
   skillPriority?: string[];
   budgetReality?: BudgetExpectation;
+    // Added these contact fields:
+  name?: string;
+  email?: string;
+  phone?: string;
+  company?: string;
 }
